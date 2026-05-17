@@ -1,5 +1,6 @@
 from grading import is_valid_score, classify_score, score_average
 from report_writer import create_report, save_report
+from advice import advcie_generator
 
 # program will start from here
 
@@ -7,7 +8,7 @@ students=[]
 
 try:
     print("""This program will calculate the average for each student,
-    then show top three!""")
+then show top three!""")
     
     while True:
         student_name = input("Enter student name (or q to quit): ")
@@ -29,7 +30,8 @@ try:
 
         average = score_average(math, physics, chemistry)
         status = classify_score(average)
-        report = create_report(student_name, average, status)
+        advice = advcie_generator(average)
+        report = create_report(student_name, average, status, advice)
         filename = save_report(student_name, report)
 
         # add student name + average to the studnets list

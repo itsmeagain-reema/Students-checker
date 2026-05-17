@@ -1,10 +1,11 @@
 # create report of performance
-def create_report(student_name, score, status):
+def create_report(student_name, score, status, advice):
     report = f""" Student Performance Report!
     ----------------------------------------
     Student : {student_name}
     Average : {score}
     Status : {status}
+    Advice : {advice}
     """
     return report
 
